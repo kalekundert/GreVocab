@@ -1,0 +1,38 @@
+#!/usr/bin/python
+
+import re
+import random
+
+from ConfigParser import ConfigParser
+
+parser = ConfigParser()
+parser.read("/home/kale/etc/vocab.list")
+
+words = parser.sections()
+random.shuffle(words)
+
+word = words[0]
+definition = parser.get(word, "def")
+
+print "What does %s mean? " % word,
+input = raw_input()
+print "It means %s." % definition
+
+"""'
+pattern = re.compile("(.+?[.!?)")
+
+for command in pattern.split(input):
+    if not command: continue
+    else: type = command[-1]
+
+    if type == ".": continue
+
+    if type == "!":
+        if 
+        '"""
+
+
+
+
+
+
